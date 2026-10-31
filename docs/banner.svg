@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="400" viewBox="0 0 1200 400" role="img" aria-label="说清楚 SayClear">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#141c33" />
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#8b5cf6" />
+    </linearGradient>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3b82f6" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#bg)" />
+
+  <!-- 标题 -->
+  <g font-family="'PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif">
+    <rect x="64" y="44" width="44" height="44" rx="12" fill="url(#mark)" />
+    <path d="M79 57 L93 66 L79 75" fill="none" stroke="#ffffff" stroke-width="6"
+          stroke-linecap="round" stroke-linejoin="round" />
+    <text x="122" y="66" fill="#f8fafc" font-size="26" font-weight="700" letter-spacing="1">说清楚</text>
+    <text x="122" y="88" fill="#64748b" font-size="12" letter-spacing="4">S A Y C L E A R</text>
+
+    <text x="64" y="132" fill="#94a3b8" font-size="16">
+      把说不清的需求,改写成 AI 能直接执行的提示词。
+    </text>
+  </g>
+
+  <!-- 左:用户的原话 -->
+  <g font-family="'PingFang SC','Microsoft YaHei','Helvetica Neue',sans-serif">
+    <rect x="64" y="164" width="468" height="172" rx="16" fill="#121c31" stroke="#1e293b" />
+    <text x="90" y="196" fill="#64748b" font-size="11" letter-spacing="3">你说的</text>
+    <text x="90" y="232" fill="#cbd5e1" font-size="16">我想弄个能统计的东西,</text>
+    <text x="90" y="262" fill="#cbd5e1" font-size="16">看看每天花了多少钱,</text>
+    <text x="90" y="292" fill="#cbd5e1" font-size="16">越简单越好</text>
+  </g>
+
+  <!-- 中间箭头 -->
+  <g stroke="url(#accent)" stroke-width="2.5" fill="none" stroke-linecap="round">
+    <path d="M560 250 H628" />
+    <path d="M614 240 L628 250 L614 260" stroke-linejoin="round" />
+  </g>
+
+  <!-- 右:AI 收到的 -->
+  <g font-family="'JetBrains Mono','Cascadia Code',Consolas,monospace">
+    <rect x="656" y="150" width="480" height="200" rx="16" fill="#0f172a" stroke="#1e293b" />
+    <text x="682" y="182" fill="#64748b" font-size="11" letter-spacing="3"
+          font-family="'PingFang SC','Microsoft YaHei',sans-serif">AI 收到的</text>
+    <text x="682" y="214" fill="#93c5fd" font-size="13">## 角色</text>
+    <text x="806" y="214" fill="#cbd5e1" font-size="13">数据整理助手</text>
+    <text x="682" y="240" fill="#93c5fd" font-size="13">## 任务</text>
+    <text x="806" y="240" fill="#cbd5e1" font-size="13">统计每日支出</text>
+    <text x="682" y="266" fill="#93c5fd" font-size="13">## 约束</text>
+    <text x="806" y="266" fill="#cbd5e1" font-size="13">极简,不解释</text>
+    <text x="682" y="292" fill="#93c5fd" font-size="13">## 输出格式</text>
+    <text x="806" y="292" fill="#cbd5e1" font-size="13">Markdown 表格</text>
+    <text x="682" y="318" fill="#93c5fd" font-size="13">## 验收标准</text>
+    <text x="806" y="318" fill="#cbd5e1" font-size="13">拿来就能用</text>
+  </g>
+
+  <!-- 底部提示 -->
+  <g font-family="'PingFang SC','Microsoft YaHei',sans-serif">
+    <text x="64" y="372" fill="#334155" font-size="12">
+      会先问你三个问题 · 本地规则兜底 · 不联网也能跑
+    </text>
+  </g>
+</svg>

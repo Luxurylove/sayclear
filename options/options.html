@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="options.css" />
+    <title>说清楚 · 设置</title>
+  </head>
+  <body>
+    <main class="page">
+      <header class="head">
+        <img src="../icons/icon48.png" alt="" />
+        <div>
+          <h1>说清楚</h1>
+          <p>把说不清的需求,改写成 AI 能直接执行的提示词。</p>
+        </div>
+      </header>
+
+      <section class="card">
+        <h2>模型</h2>
+        <p class="note">
+          任何兼容 OpenAI <code>/chat/completions</code> 的服务都能用。Key 只存在这台电脑的浏览器本地,
+          不会上传到任何第三方。
+        </p>
+
+        <label class="field">
+          <span>服务商</span>
+          <select id="provider">
+            <option value="openai">OpenAI(或兼容接口)</option>
+            <option value="deepseek">DeepSeek</option>
+            <option value="ollama">Ollama(本地免费)</option>
+            <option value="custom">自定义</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>接口地址</span>
+          <input id="base-url" type="url" spellcheck="false" placeholder="https://api.openai.com/v1" />
+          <em>以 <code>/v1</code> 结尾;扩展会自动补上 <code>/chat/completions</code>。</em>
+        </label>
+
+        <label class="field">
+          <span>模型名</span>
+          <input id="model" type="text" spellcheck="false" placeholder="gpt-4o-mini" />
+        </label>
+
+        <label class="field">
+          <span>API Key</span>
+          <input id="api-key" type="password" spellcheck="false" placeholder="sk-..." autocomplete="off" />
+          <em>用 Ollama 可以留空。</em>
+        </label>
+
+        <div class="actions">
+          <button id="save" class="primary" type="button">保存</button>
+          <button id="test" class="ghost" type="button">测试连接</button>
+          <span id="status" class="status" role="status" aria-live="polite"></span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>权限说明</h2>
+        <ul class="plain">
+          <li>扩展只在你第一次保存某个接口地址时,向你申请访问那一个域名的权限。</li>
+          <li>它不会读取你的浏览记录,也不会把页面内容发给除你自己配置的模型以外的任何服务。</li>
+          <li>页面内改写功能只在 ChatGPT、Claude、DeepSeek、Gemini、Kimi、豆包、元宝上运行。</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>数据</h2>
+        <p class="note">最近 40 次生成记录保存在本机,只用于让你点一下就能取回。</p>
+        <button id="clear-history" class="ghost" type="button">清空生成记录</button>
+      </section>
+    </main>
+
+    <script type="module" src="options.js"></script>
+  </body>
+</html>

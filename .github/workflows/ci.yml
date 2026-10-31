@@ -1,0 +1,36 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 语法检查
+        run: |
+          set -e
+          find . -name '*.js' -not -path './node_modules/*' -exec node --check {} \;
+
+      - name: 冒烟测试
+        run: node tests/smoke.mjs
+
+      - name: 打包扩展
+        run: |
+          zip -r sayclear.zip . \
+            -x '.git/*' -x 'docs/*' -x 'tests/*' -x 'scripts/*' \
+            -x '.github/*' -x '*.md' -x 'LICENSE' -x 'package.json'
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sayclear-extension
+          path: sayclear.zip
+          if-no-files-found: error

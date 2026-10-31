@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="popup.css" />
+    <title>说清楚</title>
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand"><img src="../icons/icon32.png" alt="" /><span>说清楚</span></div>
+      <button id="settings" class="icon-btn" type="button" title="设置">⚙</button>
+    </header>
+
+    <main class="main">
+      <label class="field-label" for="input">你想让 AI 干什么?说糙一点没关系。</label>
+      <textarea
+        id="input"
+        rows="4"
+        spellcheck="false"
+        placeholder="例:我想弄个能统计的东西,看看每天花了多少钱,越简单越好"
+      ></textarea>
+
+      <div class="row">
+        <button id="voice" class="chip" type="button">🎤 语音</button>
+        <span id="hint" class="hint"></span>
+        <button id="run" class="primary" type="button">生成提示词</button>
+      </div>
+
+      <section id="progress" class="progress" hidden>
+        <div class="bar"><i></i></div>
+        <p id="stage">正在理解你的意思…</p>
+      </section>
+
+      <p id="error" class="error" hidden></p>
+
+      <section id="result" class="result" hidden>
+        <div class="block">
+          <div class="label">你的真实需求</div>
+          <p id="goal" class="goal"></p>
+          <p id="meta" class="meta"></p>
+          <ul id="constraints" class="chips"></ul>
+        </div>
+
+        <div class="block" id="gaps-block">
+          <div class="label">还缺这几个信息</div>
+          <ul id="gaps" class="gaps"></ul>
+        </div>
+
+        <div class="block">
+          <div class="label-row">
+            <span class="label">提示词</span>
+            <div class="tabs" id="tabs">
+              <button class="tab" type="button" data-view="slim" aria-selected="true">精简</button>
+              <button class="tab" type="button" data-view="full" aria-selected="false">完整</button>
+            </div>
+          </div>
+          <pre id="output" class="output"></pre>
+          <div class="row">
+            <button id="copy" class="chip" type="button">复制</button>
+            <button id="insert" class="chip" type="button">填到页面</button>
+            <span id="mode" class="mode"></span>
+          </div>
+        </div>
+      </section>
+
+      <section id="history-wrap" class="history" hidden>
+        <div class="label-row">
+          <span class="label">最近</span>
+          <button id="clear-history" class="link" type="button">清空</button>
+        </div>
+        <ul id="history" class="history-list"></ul>
+      </section>
+    </main>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>

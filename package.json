@@ -1,0 +1,11 @@
+{
+  "name": "sayclear",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "把口语化的需求改写成 AI 能直接执行的提示词(Chrome 扩展,无构建)",
+  "scripts": {
+    "test": "node tests/smoke.mjs"
+  },
+  "license": "MIT"
+}
